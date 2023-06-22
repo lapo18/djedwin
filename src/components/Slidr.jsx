@@ -5,16 +5,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // import required modules
-import {Autoplay, Pagination } from "swiper";
+import {Navigation, Autoplay, Pagination } from "swiper";
 
 export default function App() {
   return (
     <>
       <Swiper
         slidesPerView={3}
-        spaceBetween={30}
+        spaceBetween={50}
+        navigation
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -23,11 +25,21 @@ export default function App() {
           clickable: true,
         }}
         loop={true}
-        modules={[Autoplay,Pagination]}
+        modules={[Navigation, Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://img.freepik.com/free-photo/dj-playing-music-club-with-dj-wearing-headphones_1340-32967.jpg?w=2000"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://img.freepik.com/free-photo/dj-playing-music-club-with-dj-wearing-headphones_1340-32967.jpg?w=2000"
+            alt=""
+          />
+        </SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
         <SwiperSlide>Slide 5</SwiperSlide>
@@ -37,5 +49,5 @@ export default function App() {
         <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
     </>
-  );
+  )
 }
